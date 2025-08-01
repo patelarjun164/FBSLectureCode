@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="ref" class="com.phoenix.demos.Consultant" autowire="byName" scope="prototype" lazy-init="true">
+			<property name="rateOfRemuneration" value="12345"></property>
+			<property name="name" value="ZZ"></property>
+<!-- 			<property name="postal" ref="adr"></property> -->
+	</bean>	
+	<bean id="object" class="com.phoenix.demos.Consultant">
+			<property name="rateOfRemuneration" value="12345"></property>
+			<property name="name" value="ZZ"></property>
+	</bean>	
+	<bean id="adr" class="com.phoenix.demos.Address">
+		<property name="line1" value="Shivajinagar"></property>
+		<property name="line2" value="Pune"></property>
+	</bean>
+	<bean id="postal" class="com.phoenix.demos.Address">
+		<property name="line1" value="Sinhgad"></property>
+		<property name="line2" value="Pune"></property>
+	</bean>
+</beans>
